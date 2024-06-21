@@ -12,7 +12,8 @@ const app = express();
 const PORT = process.env.PORT;
 
 //middlewares
-app.use('/api/user', userRouter);
+app.use(express.json());
+app.use('/api/users', userRouter);
 app.use('/api/owner', ownerRouter);
 app.use('/api/product', productRouter);
 
