@@ -26,3 +26,8 @@ export const loginUser = async (req, res) => {
         return res.status(500).send("Internal Server Error");
     }
 }
+
+
+export const logoutUser = (req, res) => {
+    res.redirect('/')
+}

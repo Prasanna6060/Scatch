@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
 
 router.get('/shop', isLoggedIn, async (req, res) => {
     try {
-        const products = await productModel.find(); // Fetch products from the database
-        res.render('shop', { products }); // Pass the products array to the template
+        const products = await productModel.find(); 
+        res.render('shop', { products }); 
     } catch (error) {
         console.error('Error fetching products:', error);
         res.status(500).send('Internal Server Error');
