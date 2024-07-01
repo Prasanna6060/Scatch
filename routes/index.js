@@ -5,9 +5,11 @@ import productModel from '../models/product.model.js'; // Import your product mo
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    const error = ''; 
-    res.render('index', { error });
+    const error = '';
+    const isLoggedIn = !!req.user;
+    res.render('index', { error, loggedin: false });
 });
+
 
 router.get('/shop', isLoggedIn, async (req, res) => {
     try {
