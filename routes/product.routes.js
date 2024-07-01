@@ -19,10 +19,7 @@ router.post('/create',upload.single('image'), async(req, res) => {
          if(!req.file) {
             return res.status(400).send('No file uploaded');
          };
-        res.send({
-            message: 'File uploaded successfully!',
-            file: req.file
-        });
+        
   
     let newImage = new productModel({
         image: req.file.buffer,
@@ -32,6 +29,11 @@ router.post('/create',upload.single('image'), async(req, res) => {
     });
 
     let  savedImage = await newImage.save();
+    res.send({
+        message: 'File uploaded successfully!',
+        file: req.file,
+        savedImage
+    });
         
 });
 
