@@ -31,7 +31,7 @@ app.use(cookieParser()); // Call cookieParser as a function
 app.use('/', indexRoute);
 app.use('/api/users', userRouter);
 app.use('/api/owner', ownerRouter);
-app.use('/api/product', productRouter);
+app.use('/api/products', productRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
